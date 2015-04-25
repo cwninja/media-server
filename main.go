@@ -26,6 +26,7 @@ func main() {
   })
 
   router.HandleFunc("/{key:[0-9a-f]+}", func(w http.ResponseWriter, r *http.Request) {
+    log.Println(r.Header)
     vars := mux.Vars(r)
     key := vars["key"]
 
