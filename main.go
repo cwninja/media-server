@@ -38,6 +38,7 @@ func main() {
     }
 
     w.Header().Set("Content-Disposition", "inline")
+    w.Header().Set("X-Accel-Buffering", "no")
 
     if len(matches) > 0 {
       http.ServeFile(w, r, matches[0])
