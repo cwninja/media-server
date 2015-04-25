@@ -36,6 +36,8 @@ func main() {
       return
     }
 
+    w.Header().Set("Content-Disposition", "inline")
+
     if len(matches) > 0 {
       http.ServeFile(w, r, matches[0])
       return
